@@ -21,7 +21,7 @@
 <meta property="og:description" content="Autodemolizioni ad Asti dal 1978. Ritiro gratuito veicoli a domicilio e vasto catalogo ricambi usati verificati per auto e moto.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop">
 
-<!-- Nuovo Logo Vettoriale per Favicon (A / GRU COMPLETA / L) -->
+<!-- Logo Vettoriale A / Gru Completa / L per Favicon -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 240 160' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 130 L 45 50 L 70 130' stroke='%23f4f4f4' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='30' y1='100' x2='60' y2='100' stroke='%23f4f4f4' stroke-width='14' stroke-linecap='round'/%3E%3Cpath d='M 85 130 L 115 130 L 115 105 L 85 105 Z' fill='%23FF5722'/%3E%3Cpath d='M 90 105 L 90 85 L 110 85 L 110 105 Z' fill='%23FF5722'/%3E%3Cline x1='100' y1='95' x2='155' y2='35' stroke='%23FF5722' stroke-width='12' stroke-linecap='round'/%3E%3Cline x1='155' y1='35' x2='155' y2='80' stroke='%23FF5722' stroke-width='4'/%3E%3Cpath d='M 143 80 H 167 V 90 Q 167 100 155 100 Q 143 100 143 90 Z' fill='%23FF5722'/%3E%3Cpath d='M 146 95 C 120 115 135 145 146 150' stroke='%23FF5722' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 164 95 C 190 115 175 145 164 150' stroke='%23FF5722' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3Cline x1='155' y1='100' x2='155' y2='140' stroke='%23FF5722' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M 190 50 V 130 H 225' stroke='%23f4f4f4' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
 <link rel="canonical" href="https://lollinorusso.github.io/autodemolizionilimardi/">
@@ -54,14 +54,8 @@
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "08:00",
-      "closes": "13:00"
+      "opens": "08:30",
+      "closes": "18:30"
     }
   ]
 }
@@ -157,12 +151,11 @@ nav.main-nav a:hover{color:var(--accent);}
 .section-head{margin-bottom:3rem;max-width:70ch;}
 .section-head h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;}
 .section-head p{color:var(--text-muted);font-size:1.1rem;}
-.trust-list{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.trust-list{display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;}
 .trust-item{display:flex;gap:1.5rem;padding:2rem;background:var(--bg-panel);border-radius:var(--radius-m);border:1px solid var(--border-color);align-items:flex-start;}
 .trust-item .ic{width:36px;height:36px;flex:none;color:var(--accent);}
 .trust-item h3{font-size:1.15rem;margin-bottom:.5rem;}
 .trust-item p{color:var(--text-muted);font-size:.95rem;}
-@media (max-width:768px){.trust-list{grid-template-columns:1fr;}}
 
 /* ============ RITIRO VEICOLO ============ */
 .pickup-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:4rem;}
@@ -183,9 +176,9 @@ nav.main-nav a:hover{color:var(--accent);}
 
 /* Sidebar filtri su Desktop / Drawer su Mobile */
 .filters{position:sticky;top:100px;display:flex;flex-direction:column;gap:1.8rem;}
+.filters select {background-color: var(--bg-card); color: var(--text-main);}
 .filter-group h4{font-size:1rem;color:var(--text-main);text-transform:uppercase;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color);}
 .checkbox-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem;font-size:.95rem;color:var(--text-muted);cursor:pointer;}
-.filter-group select{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-s);padding:.45rem .8rem;color:var(--text-main);width:100%;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.8rem;}
 
 /* Elementi di Filtro Mobile */
@@ -277,7 +270,7 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
 .admin-item{display:flex;justify-content:space-between;padding:1rem;background:var(--bg-main);border:1px solid var(--border-color);border-radius:var(--radius-s);align-items:center;}
 #toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:var(--wa-green);color:white;padding:1rem 2rem;border-radius:50px;font-weight:600;z-index:200;display:none;box-shadow:0 10px 20px rgba(0,0,0,0.3);}
 
-/* ELIMINA CONFERMA MODAL (Custom per evitare prompt nativi) */
+/* ELIMINA CONFERMA MODAL */
 #deleteModal .modal-box { max-width: 400px; text-align: center; }
 </style>
 </head>
@@ -289,11 +282,11 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     <a href="#top" class="brand">
       <!-- NUOVO LOGO: A / GRU COMPLETA / L -->
       <svg width="75" height="50" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Lettera A -->
+        <!-- Lettera A (Sinistra) -->
         <path d="M 20 130 L 45 50 L 70 130" stroke="#f4f4f4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
         <line x1="30" y1="100" x2="60" y2="100" stroke="#f4f4f4" stroke-width="14" stroke-linecap="round"/>
         
-        <!-- Gru -->
+        <!-- Gru Centrale Completa -->
         <!-- Base/Cabina -->
         <path d="M 85 130 L 115 130 L 115 105 L 85 105 Z" fill="#FF5722"/>
         <path d="M 90 105 L 90 85 L 110 85 L 110 105 Z" fill="#FF5722"/>
@@ -307,7 +300,7 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
         <path d="M 164 95 C 190 115 175 145 164 150" stroke="#FF5722" stroke-width="8" stroke-linecap="round" fill="none"/>
         <line x1="155" y1="100" x2="155" y2="140" stroke="#FF5722" stroke-width="8" stroke-linecap="round"/>
 
-        <!-- Lettera L -->
+        <!-- Lettera L (Destra) -->
         <path d="M 190 50 V 130 H 225" stroke="#f4f4f4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span class="brand-word"><strong>Limardi</strong><span>Autodemolizioni Asti</span></span>
@@ -335,16 +328,16 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow-tag">Dal 1978 · Oltre 45 anni di esperienza</span>
+      <span class="eyebrow-tag">Dal 1977 · Oltre 45 anni di esperienza</span>
       <h1>L'usato verificato per far ripartire la tua auto.</h1>
-      <p class="lede">Ricambi controllati, smontati e pronti in magazzino ad Asti. Ritiro gratuito del tuo veicolo fuori uso con pratiche PRA incluse.</p>
+      <p class="lede">Ricambi controllati, smontati e pronti in magazzino ad Asti. Ritiro del tuo veicolo fuori uso con pratiche PRA incluse.</p>
       <div class="hero-ctas">
         <a class="btn btn--primary" href="#catalogo">Esplora Negozio</a>
         <a class="btn btn--outline" href="#servizi">Scopri i Servizi</a>
       </div>
     </div>
     <div class="hero-visual">
-      <!-- Immagine fotografica ad alta risoluzione -->
+      <!-- Immagine fotografica in alta risoluzione -->
       <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" alt="Magazzino Ricambi Auto Motori">
     </div>
   </div>
@@ -356,22 +349,29 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     <div class="section-head text-center" style="margin: 0 auto; text-align: center;">
       <span class="eyebrow-tag">Chi Siamo</span>
       <h2>La Nostra Storia & Servizi</h2>
-      <p>Operativi ad Asti da due generazioni, siamo il punto di riferimento per il recupero materiali e la demolizione a norma di legge.</p>
+      <p>Operativi ad Asti da due generazioni, siamo il punto di riferimento per il recupero dei veicoli fuori uso e la demolizione a norma di legge.</p>
     </div>
     
     <div class="trust-list">
       <div class="trust-item">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
         <div>
-          <h3>Centro Autorizzato ACI-PRA</h3>
-          <p>Iscritti all'Albo Nazionale Gestori Ambientali. Emettiamo regolare certificato di presa in carico per l'immediata cessazione delle tasse.</p>
+          <h3>Centro Autorizzato ACI-PRA D02767</h3>
+          <p>Iscritti all'Albo Nazionale Gestori Ambientali per lo smaltimento dei rifiuti. Emettiamo regolare certificato di rottamazione e, nei tempi previsti per legge, l'annotata cessazione della circolazione.</p>
         </div>
       </div>
       <div class="trust-item">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h11l3 4h4M3 13V7h9v6M3 13v4h2"/><circle cx="7.5" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
         <div>
-          <h3>Ritiro a Domicilio</h3>
-          <p>Disponiamo di mezzi di soccorso propri per il prelievo del veicolo incidentato direttamente a casa tua o in officina.</p>
+          <h3>Rimozione e Trasporto</h3>
+          <p>Disponiamo di mezzi di soccorso propri per il prelievo di qualsiasi tipo di veicolo e organizziamo il ritiro presso il luogo indicato dal cliente, previa richiesta.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <div>
+          <h3>Rottamazione veicoli sottoposti a fermo amministrativo</h3>
+          <p>Grazie alla Legge n. 14 del 24 febbraio 2026, ora è possibile rottamare e radiare dal PRA un veicolo gravato da fermo amministrativo, purché ridotto a rifiuto o non più utilizzabile. Usa il modulo di contatto per il ritiro per maggiori informazioni.</p>
         </div>
       </div>
     </div>
@@ -382,7 +382,7 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
         <div class="section-head" style="margin-left:0; text-align:left;">
           <span class="eyebrow-tag">Pronto Intervento</span>
           <h2>Richiedi il Ritiro</h2>
-          <p>Compila il modulo per confermare la fattibilità e i costi (spesso gratuiti). Ti risponderemo subito su WhatsApp.</p>
+          <p>Compila il modulo per confermare la fattibilità e i costi. Ti risponderemo subito su WhatsApp. I veicoli di alcune categorie potranno essere valutati in base al modello e all'anno di immatricolazione.</p>
         </div>
         <ul>
           <li>Preventivo chiaro e senza sorprese</li>
@@ -402,13 +402,19 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
           </div>
           <div class="field">
             <label for="pCondition">Stato del veicolo</label>
-            <select id="pCondition"><option>Marciante</option><option>Non marciante</option><option>Incidentato</option><option>Incendiato / Alluvionato</option></select>
+            <select id="pCondition">
+              <option>Marciante</option>
+              <option>Non marciante</option>
+              <option>Incidentato</option>
+              <option>Incendiato / Alluvionato</option>
+              <option>Fermo amministrativo</option>
+            </select>
           </div>
           <!-- Scelta modalità di consegna -->
           <div class="field">
             <label for="pMethod">Modalità di consegna</label>
             <select id="pMethod">
-              <option value="Ritiro a domicilio">Ritiro a domicilio con carro attrezzi</option>
+              <option value="Ritiro con carro attrezzi">Ritiro con carro attrezzi</option>
               <option value="Consegna in sede">Porto io la macchina in demolizione</option>
             </select>
           </div>
@@ -436,9 +442,9 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     <div class="catalog-toolbar">
       <button class="btn btn--outline filter-mobile-btn" id="openMobileFilters">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-        Filtri
+        Marchi Auto
       </button>
-      <input type="search" id="searchInput" placeholder="Cerca OEM, nome, marca o modello...">
+      <input type="search" id="searchInput" placeholder="Cerca OEM, nome o modello a più parole...">
       <div class="sort-control">
         <select id="sortSelect">
           <option value="default">Ordina per: Predefinito</option>
@@ -451,35 +457,19 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     </div>
 
     <div class="catalog-layout">
+      <!-- SOLO FILTRO MARCHI: Generato dinamicamente in base ai pezzi presenti nel DB -->
       <aside class="filters" id="filtersPanel">
         <button class="filter-close-btn" id="closeMobileFilters">✕</button>
         <div class="filter-group">
-          <h4>Categoria Componente</h4>
-          <label class="checkbox-row"><input type="checkbox" value="motore" class="cat-check"> Motore</label>
-          <label class="checkbox-row"><input type="checkbox" value="carrozzeria" class="cat-check"> Carrozzeria</label>
-          <label class="checkbox-row"><input type="checkbox" value="elettrico" class="cat-check"> Elettronica</label>
-          <label class="checkbox-row"><input type="checkbox" value="ruote" class="cat-check"> Sospensioni</label>
-          <label class="checkbox-row"><input type="checkbox" value="interni" class="cat-check"> Abitacolo</label>
-          <label class="checkbox-row"><input type="checkbox" value="moto" class="cat-check"> Moto</label>
+          <h4>Marchi Trattati</h4>
+          <div id="brandFilterContainer">
+            <!-- I checkbox dei marchi verranno generati dal JavaScript -->
+            <p style='color:var(--text-muted); font-size:0.9rem;'>Caricamento marchi...</p>
+          </div>
         </div>
-        <div class="filter-group">
-          <h4>Condizione</h4>
-          <label class="checkbox-row"><input type="checkbox" value="Ottimo" class="cond-check"> Ottimo</label>
-          <label class="checkbox-row"><input type="checkbox" value="Buono" class="cond-check"> Buono</label>
-          <label class="checkbox-row"><input type="checkbox" value="Discreto" class="cond-check"> Discreto</label>
-        </div>
-        <div class="filter-group">
-          <h4>Fascia di Prezzo</h4>
-          <select id="priceFilter">
-            <option value="all">Qualsiasi importo</option>
-            <option value="0-50">Sotto i 50€</option>
-            <option value="50-150">Tra 50€ e 150€</option>
-            <option value="150-300">Tra 150€ e 300€</option>
-            <option value="300-99999">Oltre i 300€</option>
-          </select>
-        </div>
-        <button class="btn btn--outline btn--sm btn--block" id="resetFilters" style="margin-top:1rem;">Azzera Filtri</button>
+        <button class="btn btn--outline btn--sm btn--block" id="resetFilters" style="margin-top:1rem;">Mostra Tutto</button>
       </aside>
+      
       <div class="product-grid" id="productGrid"></div>
     </div>
   </div>
@@ -492,14 +482,18 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>Limardi Asti</h4>
-        <p>Da due generazioni il punto di riferimento per il recupero materiali ad Asti e provincia.</p>
-        <p style="margin-top:1rem;"><strong>Orari:</strong><br>Lun-Ven: 08:00 - 12:00 / 14:00 - 18:00<br>Sab: 08:00 - 13:00</p>
+        <h4>Limardi Autodemolizioni Asti</h4>
+        <p>Da due generazioni il punto di riferimento per il recupero dei veicoli fuori uso ad Asti e provincia.</p>
+        <p style="margin-top:1rem;"><strong>Orari:</strong><br>Lun-Ven: 8:30 - 12:30 / 14:30 - 18:30<br>Sab: solo su appuntamento</p>
       </div>
       <div>
         <h4>Recapiti</h4>
         <p>Via Learco Guerra, 1<br>14100 Asti (AT)</p>
-        <p style="margin-top:1rem; font-family:var(--font-display); font-size:1.2rem; color:var(--text-main);">0141 476591</p>
+        <p style="margin-top:1rem; font-family:var(--font-display); font-size:1.1rem; color:var(--text-main);">
+          Fisso: 0141 476591<br>
+          Tel: 3240906258<br>
+          <a href="mailto:limardiautodemolizioni@gmail.com" style="font-size:0.95rem;font-family:var(--font-body);color:var(--accent);">limardiautodemolizioni@gmail.com</a>
+        </p>
       </div>
       <div>
         <h4>Navigazione</h4>
@@ -606,30 +600,18 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
       <div class="admin-card">
         <h3>Aggiungi Ricambio</h3>
         <form id="addForm" style="margin-top:1.5rem;">
-          <div class="field"><label>Nome</label><input type="text" id="aName" required></div>
-          <div class="field"><label>Marca</label><input type="text" id="aBrand" required></div>
+          <div class="field"><label>Nome Ricambio</label><input type="text" id="aName" required></div>
+          <!-- Il campo Marca è cruciale perché genera dinamicamente i filtri del negozio -->
+          <div class="field"><label>Marca Automobillistica (es. FIAT, BMW)</label><input type="text" id="aBrand" required></div>
           <div class="field"><label>Modello</label><input type="text" id="aModel" required></div>
           <div class="form-row">
             <div class="field"><label>Anni</label><input type="text" id="aYears" required></div>
             <div class="field"><label>Prezzo</label><input type="number" id="aPrice" required></div>
           </div>
           <div class="field"><label>Codice OEM</label><input type="text" id="aCode"></div>
-          <div class="field">
-            <label>Categoria</label>
-            <select id="aCat">
-              <option value="motore">Motore</option>
-              <option value="carrozzeria">Carrozzeria</option>
-              <option value="elettrico">Elettronica</option>
-              <option value="ruote">Sospensioni</option>
-              <option value="interni">Abitacolo</option>
-              <option value="moto">Moto</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Condizione</label>
-            <select id="aCond"><option>Ottimo</option><option>Buono</option><option>Discreto</option></select>
-          </div>
+          
           <div class="field"><label>Descrizione</label><textarea id="aDesc"></textarea></div>
+          
           <!-- Selezione Immagine con compressione automatica -->
           <div class="field"><label>Foto Ricambio (Opzionale - Compressione Automatica)</label><input type="file" id="aImage" accept="image/jpeg, image/png, image/webp"></div>
           <button type="submit" class="btn btn--primary btn--block">Salva nel Database</button>
@@ -669,6 +651,8 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     onSnapshot(collection(db, "ricambi"), (snapshot) => {
       PRODUCTS = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       window.PRODUCTS = PRODUCTS; 
+      // Aggiorna dinamicamente la lista dei Marchi
+      if(typeof updateBrandFilters === 'function') updateBrandFilters();
       if(typeof renderCatalog === 'function') renderCatalog();
       if(typeof renderAdminList === 'function') renderAdminList();
     }, (error) => {
@@ -678,38 +662,56 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     console.error("Errore inizializzazione Firebase:", e);
   }
 
-  const ICONS = {
-    motore: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><path d="M12 3.5v2.4M12 18.1v2.4M20.5 12h-2.4M5.9 12H3.5M17.5 6.5l-1.7 1.7M8.2 15.8l-1.7 1.7M17.5 17.5l-1.7-1.7M8.2 8.2 6.5 6.5"/></svg>',
-    carrozzeria: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="4" width="12" height="16" rx="1.5"/><line x1="5" y1="9" x2="17" y2="9"/><circle cx="14" cy="14" r="1" fill="currentColor"/></svg>',
-    elettrico: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 5 13h5l-1 9 8-11h-5l1-9Z"/></svg>',
-    ruote: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2"/><path d="M12 4.5v3M12 16.5v3M19.5 12h-3M7.5 12h-3"/></svg>',
-    interni: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 20v-6a3 3 0 0 1 3-3h1a3 3 0 0 1 3 3v6"/><path d="M8 20h8"/><path d="M9 11V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v5"/></svg>',
-    moto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17 10 9h4l3 4M10 9 8 6h3M13 13h5l2 4"/></svg>'
-  };
+  // Fallback Icon Vettoriale (Se manca la foto reale)
+  const fallbackIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><path d="M12 3.5v2.4M12 18.1v2.4M20.5 12h-2.4M5.9 12H3.5M17.5 6.5l-1.7 1.7M8.2 15.8l-1.7 1.7M17.5 17.5l-1.7-1.7M8.2 8.2 6.5 6.5"/></svg>';
 
   let cart = [];
-  let activeCats = new Set(), activeConds = new Set();
+  let activeBrands = new Set(); // Sistema di filtraggio esclusivo per i Marchi
+
+  window.updateBrandFilters = function() {
+    const container = document.getElementById("brandFilterContainer");
+    
+    // 1. Estrae tutti i marchi unici dal DB (Normalizzati in Maiuscolo)
+    const uniqueBrands = [...new Set(window.PRODUCTS.map(p => (p.brand || "").trim().toUpperCase()))].filter(Boolean).sort();
+    
+    // 2. Rimuove eventuali filtri attivi di marchi che non esistono più
+    activeBrands.forEach(b => { if(!uniqueBrands.includes(b)) activeBrands.delete(b); });
+
+    if(uniqueBrands.length === 0) {
+      container.innerHTML = "<p style='color:var(--text-muted); font-size:0.9rem;'>Nessun marchio presente</p>";
+      return;
+    }
+
+    // 3. Genera l'HTML dei checkbox
+    container.innerHTML = uniqueBrands.map(brand => `
+      <label class="checkbox-row">
+        <input type="checkbox" value="${brand}" class="brand-check" ${activeBrands.has(brand) ? 'checked' : ''}>
+        ${brand}
+      </label>
+    `).join("");
+
+    // 4. Ri-applica gli Event Listener ai nuovi checkbox generati
+    document.querySelectorAll(".brand-check").forEach(c => {
+      c.addEventListener("change", e => {
+        e.target.checked ? activeBrands.add(e.target.value) : activeBrands.delete(e.target.value);
+        window.renderCatalog();
+      });
+    });
+  };
 
   window.renderCatalog = function() {
     const q = document.getElementById("searchInput").value.toLowerCase();
     const searchTerms = q.split(' ').filter(term => term.trim() !== '');
-    const pRange = document.getElementById("priceFilter").value;
     const sort = document.getElementById("sortSelect").value;
     
     let list = window.PRODUCTS.filter(p => {
-      if(activeCats.size && !activeCats.has(p.cat)) return false;
-      if(activeConds.size && !activeConds.has(p.cond)) return false;
-      
-      // Controllo Prezzo Sicuro
-      if(pRange !== "all") { 
-        const [m,M] = pRange.split("-").map(Number); 
-        const price = Number(p.price) || 0;
-        if(price < m || price > M) return false; 
-      }
+      // Filtraggio Esclusivo per Marchio (Selezionato dalla Sidebar)
+      const pBrand = (p.brand || "").trim().toUpperCase();
+      if(activeBrands.size > 0 && !activeBrands.has(pBrand)) return false;
       
       // Ricerca Multi-parola Intelligente
       if (searchTerms.length > 0) {
-        const productString = `${p.name} ${p.brand} ${p.model} ${p.code} ${p.cat}`.toLowerCase();
+        const productString = `${p.name} ${p.brand} ${p.model} ${p.code}`.toLowerCase();
         const matchesAll = searchTerms.every(term => productString.includes(term));
         if (!matchesAll) return false;
       }
@@ -724,16 +726,13 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     document.getElementById("resultsCount").textContent = `${list.length} Pezzi`;
     const grid = document.getElementById("productGrid");
     
-    if(!list.length) { grid.innerHTML = `<div class="empty-state">Nessun ricambio trovato. Prova ad ampliare la ricerca.</div>`; return; }
+    if(!list.length) { grid.innerHTML = `<div class="empty-state">Nessun ricambio trovato per i marchi selezionati.</div>`; return; }
     
     grid.innerHTML = list.map(p => `
       <article class="card">
-        ${p.image ? `<img src="${p.image}" class="card-img" alt="${p.name}">` : `<div class="card-icon">${ICONS[p.cat] || ICONS.motore}</div>`}
+        ${p.image ? `<img src="${p.image}" class="card-img" alt="${p.name}">` : `<div class="card-icon">${fallbackIcon}</div>`}
         <h3>${p.name}</h3>
-        <p class="compat" style="color:var(--text-muted);">${p.brand} ${p.model} (${p.years})</p>
-        <div class="badges" style="margin: .5rem 0;">
-          <span class="badge" style="background:rgba(255,193,7,0.1);color:var(--hazard);">${p.cond}</span>
-        </div>
+        <p class="compat" style="color:var(--text-muted);">${(p.brand || "").toUpperCase()} ${p.model} (${p.years})</p>
         <div class="card-footer">
           <div class="price">€${p.price}</div>
           <div style="display:flex;gap:.5rem;">
@@ -749,9 +748,9 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     const p = window.PRODUCTS.find(x => x.id === id);
     document.getElementById("productModalBody").innerHTML = `
       <button class="modal-close" onclick="document.getElementById('productModal').classList.remove('open')">✕</button>
-      ${p.image ? `<img src="${p.image}" class="product-modal-img" alt="${p.name}">` : `<div class="product-modal-icon">${ICONS[p.cat] || ICONS.motore}</div>`}
+      ${p.image ? `<img src="${p.image}" class="product-modal-img" alt="${p.name}">` : `<div class="product-modal-icon">${fallbackIcon}</div>`}
       <h2>${p.name}</h2>
-      <p style="color:var(--text-muted);margin:1rem 0;">Per ${p.brand} ${p.model} (${p.years})</p>
+      <p style="color:var(--text-muted);margin:1rem 0;">Per ${(p.brand || "").toUpperCase()} ${p.model} (${p.years})</p>
       <p>${p.desc}</p>
       <h3 style="color:var(--accent);font-size:2rem;margin:1.5rem 0;">€ ${p.price}</h3>
       <button class="btn btn--primary btn--block" onclick="addCart('${p.id}');document.getElementById('productModal').classList.remove('open')">Aggiungi</button>
@@ -785,7 +784,7 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
       const p = window.PRODUCTS.find(x => x.id === line.id);
       tot += p.price * line.qty;
       return `<div class="cart-item">
-        <div class="ci-icon">${p.image ? `<img src="${p.image}" alt="img">` : (ICONS[p.cat] || ICONS.motore)}</div>
+        <div class="ci-icon">${p.image ? `<img src="${p.image}" alt="img">` : fallbackIcon}</div>
         <div class="ci-info">
           <h4>${p.name}</h4><p style="color:var(--accent);font-weight:600;">€ ${p.price}</p>
           <div class="qty-ctrl">
@@ -825,14 +824,13 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
       <div class="admin-item">
         <div style="display:flex; gap:1rem; align-items:center;">
           ${p.image ? `<img src="${p.image}" style="width:50px; height:50px; object-fit:cover; border-radius:4px;">` : `<div style="width:50px; height:50px; background:var(--bg-card); display:flex; align-items:center; justify-content:center; border-radius:4px;">No Pic</div>`}
-          <div><strong>${p.name}</strong><br><span style="color:var(--text-muted);font-size:.85rem;">€${p.price} - ${p.brand}</span></div>
+          <div><strong>${p.name}</strong><br><span style="color:var(--text-muted);font-size:.85rem;">€${p.price} - ${(p.brand||"").toUpperCase()}</span></div>
         </div>
         <button class="btn btn--outline btn--sm" style="border-color:var(--hazard);color:var(--hazard);" onclick="deleteProduct('${p.id}')">Elimina</button>
       </div>
     `).join("");
   };
 
-  // Modale Eliminazione Custom
   let currentProductToDelete = null;
   window.deleteProduct = function(id) {
     currentProductToDelete = id;
@@ -850,7 +848,6 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     }
   });
 
-  // Logica compressione immagine automatica 
   let currentUploadedImage = "";
   document.getElementById("aImage").addEventListener("change", function(e) {
     const file = e.target.files[0];
@@ -880,25 +877,27 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
   document.getElementById("addForm").addEventListener("submit", async e => {
     e.preventDefault();
     const newDoc = {
-      name: document.getElementById("aName").value, brand: document.getElementById("aBrand").value,
-      model: document.getElementById("aModel").value, years: document.getElementById("aYears").value,
-      price: Number(document.getElementById("aPrice").value), code: document.getElementById("aCode").value,
-      cat: document.getElementById("aCat").value, cond: document.getElementById("aCond").value,
-      desc: document.getElementById("aDesc").value, image: currentUploadedImage
+      name: document.getElementById("aName").value, 
+      brand: document.getElementById("aBrand").value,
+      model: document.getElementById("aModel").value, 
+      years: document.getElementById("aYears").value,
+      price: Number(document.getElementById("aPrice").value), 
+      code: document.getElementById("aCode").value,
+      desc: document.getElementById("aDesc").value, 
+      image: currentUploadedImage
     };
     try {
       if(db) {
         await setDoc(doc(collection(db, "ricambi")), newDoc);
         window.showToast("Prodotto Aggiunto!"); e.target.reset(); currentUploadedImage = ""; 
       }
-    } catch(err) { window.showToast("Errore. Controlla attivazione DB in Test!"); console.error(err); }
+    } catch(err) { window.showToast("Errore di salvataggio DB!"); console.error(err); }
   });
 
-  // Gestione dinamica campo Modulo Rottamazione
   document.getElementById("pMethod").addEventListener("change", function(e) {
     const locField = document.getElementById("locationField");
     const locInput = document.getElementById("pLocation");
-    if(e.target.value === "Ritiro a domicilio") {
+    if(e.target.value === "Ritiro con carro attrezzi") {
       locField.style.display = "flex";
       locInput.required = true;
     } else {
@@ -908,7 +907,6 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     }
   });
 
-  // Invio Form Rottamazione WhatsApp
   document.getElementById("pickupForm").addEventListener("submit", e => {
     e.preventDefault();
     const name = document.getElementById("pName").value;
@@ -920,19 +918,17 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     const location = document.getElementById("pLocation").value;
 
     let msg = `*RICHIESTA RITIRO VEICOLO*%0A%0A*Cliente:* ${name}%0A*Telefono:* ${phone}%0A*Veicolo:* ${brand} ${model}%0A*Condizione:* ${condition}%0A*Modalità:* ${method}`;
-    if (method === "Ritiro a domicilio" && location) {
+    if (method === "Ritiro con carro attrezzi" && location) {
       msg += `%0A*Luogo Ritiro:* ${location}`;
     }
 
     window.open(`https://wa.me/393240906258?text=${msg}`, "_blank");
     e.target.reset();
     
-    // Ripristina stato default form
     document.getElementById("locationField").style.display = "flex";
     document.getElementById("pLocation").required = true;
   });
 
-  // Invio Form Checkout WhatsApp
   document.getElementById("checkoutForm").addEventListener("submit", e => {
     e.preventDefault();
     const name = document.getElementById("cName").value;
@@ -952,25 +948,18 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     cart = []; window.renderCart(); document.getElementById("checkoutModal").classList.remove("open");
   });
 
-  // Event Listeners Base
   document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("navToggle").addEventListener("click", () => document.getElementById("mainNav").classList.toggle("open"));
   
-  // Ricerca e Filtri Mobile/Desktop
   document.getElementById("searchInput").addEventListener("input", window.renderCatalog);
   document.getElementById("sortSelect").addEventListener("change", window.renderCatalog);
-  document.getElementById("priceFilter").addEventListener("change", window.renderCatalog);
-  
-  document.querySelectorAll(".cat-check").forEach(c => c.addEventListener("change", e => { 
-    e.target.checked ? activeCats.add(e.target.value) : activeCats.delete(e.target.value); window.renderCatalog(); 
-  }));
-  document.querySelectorAll(".cond-check").forEach(c => c.addEventListener("change", e => { 
-    e.target.checked ? activeConds.add(e.target.value) : activeConds.delete(e.target.value); window.renderCatalog(); 
-  }));
   
   document.getElementById("resetFilters").addEventListener("click", () => {
-    document.getElementById("searchInput").value = ""; document.getElementById("sortSelect").value = "default"; document.getElementById("priceFilter").value = "all";
-    document.querySelectorAll(".cat-check, .cond-check").forEach(c => c.checked = false); activeCats.clear(); activeConds.clear(); window.renderCatalog();
+    document.getElementById("searchInput").value = ""; 
+    document.getElementById("sortSelect").value = "default"; 
+    activeBrands.clear();
+    document.querySelectorAll(".brand-check").forEach(c => c.checked = false);
+    window.renderCatalog();
     document.getElementById("filtersPanel").classList.remove("open"); 
   });
   
