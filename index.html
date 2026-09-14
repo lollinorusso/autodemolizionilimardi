@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Autodemolizioni Limardi — Ricambi usati e Rottamazione Asti</title>
-<meta name="description" content="Autodemolizioni Limardi ad Asti: vasto catalogo di ricambi usati per auto e moto testati. Ritiro gratuito veicoli fuori uso con certificato di rottamazione PRA immediato.">
-<meta name="keywords" content="autodemolizioni, asti, ricambi usati, rottamazione auto, pra, pezzi di ricambio, motori usati, carrozzeria, ritiro a domicilio, soccorso stradale">
+<meta name="description" content="Autodemolizioni Limardi ad Asti dal 1978: vasto catalogo di ricambi usati per auto e moto testati. Ritiro gratuito veicoli fuori uso con certificato di rottamazione PRA immediato.">
+<meta name="keywords" content="autodemolizioni, asti, ricambi usati, rottamazione auto, pra, pezzi di ricambio, motori usati, carrozzeria, ritiro a domicilio, soccorso stradale, aci, demolizione">
 <meta name="author" content="lollino HSL">
 <meta name="developer" content="lollino HSL">
 <meta name="robots" content="index, follow">
@@ -328,7 +328,7 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow-tag">Dal 1977 · Oltre 45 anni di esperienza</span>
+      <span class="eyebrow-tag">Dal 1978 · Oltre 45 anni di esperienza</span>
       <h1>L'usato verificato per far ripartire la tua auto.</h1>
       <p class="lede">Ricambi controllati, smontati e pronti in magazzino ad Asti. Ritiro del tuo veicolo fuori uso con pratiche PRA incluse.</p>
       <div class="hero-ctas">
@@ -482,7 +482,7 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>Limardi Autodemolizioni Asti</h4>
+        <h4><strong>Limardi Autodemolizioni Asti</strong></h4>
         <p>Da due generazioni il punto di riferimento per il recupero dei veicoli fuori uso ad Asti e provincia.</p>
         <p style="margin-top:1rem;"><strong>Orari:</strong><br>Lun-Ven: 8:30 - 12:30 / 14:30 - 18:30<br>Sab: solo su appuntamento</p>
       </div>
@@ -548,14 +548,9 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
         <div class="field"><label>Nome e cognome</label><input type="text" id="cName" required></div>
         <div class="field"><label>Telefono</label><input type="tel" id="cPhone" required></div>
       </div>
-      <div class="field"><label>Indirizzo o Ritiro Sede</label><input type="text" id="cAddress" required></div>
       <div class="field">
-        <label>Metodo di pagamento</label>
-        <select id="cPayment">
-          <option>In sede (Contanti/POS)</option>
-          <option>Bonifico Anticipato</option>
-          <option>Contrassegno (previa conferma)</option>
-        </select>
+        <label>Metodo di pagamento e ritiro</label>
+        <input type="text" id="cPayment" value="Ritiro in sede (Contanti/POS)" readonly style="opacity:0.7; cursor:not-allowed; border-color:var(--border-color);">
       </div>
       <button class="btn btn--primary btn--block" type="submit" style="margin-top:1rem;">Invia Ordine su WhatsApp</button>
     </form>
@@ -929,20 +924,24 @@ footer{padding:4rem 0 2rem;background:var(--bg-panel);border-top:1px solid var(-
     document.getElementById("pLocation").required = true;
   });
 
+  // NUOVO SCRIPT INVIO WHATSAPP CARRELLO POTENZIATO
   document.getElementById("checkoutForm").addEventListener("submit", e => {
     e.preventDefault();
     const name = document.getElementById("cName").value;
     const phone = document.getElementById("cPhone").value;
-    const address = document.getElementById("cAddress").value;
     const payment = document.getElementById("cPayment").value;
     
+    // Aggiornamento formato articoli come richiesto (Nome - Marca Modello - Q.tà - Prezzo)
     let cartText = cart.map(line => {
       const p = window.PRODUCTS.find(x => x.id === line.id);
-      return `- ${p.name} (OEM: ${p.code}) x${line.qty} - €${p.price * line.qty}`;
+      const b = (p.brand || "").trim().toUpperCase();
+      return `- ${p.name} - ${b} ${p.model} - Quantità: ${line.qty} - €${p.price * line.qty}`;
     }).join("%0A");
     
     const tot = cart.reduce((a, c) => { const p = window.PRODUCTS.find(x => x.id === c.id); return a + (p.price * c.qty); }, 0);
-    const msg = `*NUOVO ORDINE SITO WEB*%0A%0A*Cliente:* ${name}%0A*Telefono:* ${phone}%0A*Consegna:* ${address}%0A*Pagamento:* ${payment}%0A%0A*Carrello:*%0A${cartText}%0A%0A*TOTALE:* €${tot}`;
+    
+    // Generazione Stringa Finale con domanda finale annessa
+    const msg = `*NUOVO ORDINE SITO WEB*%0A%0A*Cliente:* ${name}%0A*Telefono:* ${phone}%0A*Pagamento:* ${payment}%0A%0A*Carrello:*%0A${cartText}%0A%0A*TOTALE:* €${tot}%0A%0AQuando posso venire a ritirarlo?`;
     
     window.open(`https://wa.me/393240906258?text=${msg}`, "_blank");
     cart = []; window.renderCart(); document.getElementById("checkoutModal").classList.remove("open");
